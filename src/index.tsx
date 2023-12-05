@@ -28,9 +28,7 @@ const result=`CIF:${cif?.data}  NIF:${nif?.data}`
 
 return (
   <>
-    
     <Detail markdown={result}></Detail>
- 
   </>
 );
   
