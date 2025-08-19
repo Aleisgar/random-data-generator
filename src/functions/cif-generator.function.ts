@@ -45,6 +45,8 @@ function calculateCIFControl(cif: string) {
     return String.fromCharCode(64 + controlDigit).toUpperCase(); // Convierte a letra
   } else if (/^[ABCDEFGHJUV]$/.test(firstLetter)) {
     return controlDigit === 10 ? 0 : controlDigit; // Devuelve el dígito
+  } else {
+    return "TRWAGMYFPDXBNJZSQVHLCKE".charAt(Number(alphabet) % 23);
   }
 }
 /**
@@ -60,6 +62,5 @@ function pad(number: string, maxLength: number): string {
 
 export function generateCIFNumber() {
   const cifControl = calculateCIFControl(result);
-  console.log(result);
   return result + cifControl;
 }
